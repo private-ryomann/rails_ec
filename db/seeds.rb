@@ -6,3 +6,17 @@
 #
 #   movies = Movie.create([{ name: "Star Wars" }, { name: "Lord of the Rings" }])
 #   Character.create(name: "Luke", movie: movies.first)
+
+
+
+#Productsデータ作成
+20.times do |n|
+    product = Product.create!(
+        name: "商品#{n}",
+        price: 100 * n,
+        description: "商品#{n}の詳細説明",
+        stock: n
+    )
+
+    product.image.attach(io: File.open(Rails.root.join('app/assets/images/test.jpg')), filename: 'test.jpg')
+end
