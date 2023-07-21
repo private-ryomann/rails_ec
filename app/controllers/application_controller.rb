@@ -6,6 +6,7 @@ class ApplicationController < ActionController::Base
     private
   
     def set_active_storage_host
-      ActiveStorage::Current.host = request.base_url
+      host = ENV["RAILS_ENV"] === "production" ? "https://railsec-75428b027bab.herokuapp.com" : "localhost:3000"
+      ActiveStorage::Current.host = host
     end
 end
