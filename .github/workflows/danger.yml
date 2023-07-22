@@ -16,6 +16,7 @@ jobs:
       - name: setup danger
         uses: ruby/setup-ruby@8f312efe1262fb463d906e9bf040319394c18d3e # v1.92
         with:
+          fetch-depth: 0
           ruby-version: 3.0.2
       - run: gem install danger
       - name: Run danger
