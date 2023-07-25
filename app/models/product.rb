@@ -1,7 +1,9 @@
 # frozen_string_literal: true
 
 class Product < ApplicationRecord
-  has_one_attached :image
+  has_one_attached :thumbnail_image
+  has_one_attached :main_image
+
   paginates_per 8
 
   validates :name, presence: true, length: { maximum: 255 }
