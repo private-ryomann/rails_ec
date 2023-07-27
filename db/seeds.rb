@@ -17,5 +17,8 @@
     stock: n
   )
 
-  product.image.attach(io: File.open(Rails.root.join('app/assets/images/test.jpg')), filename: 'test.jpg')
+  product.thumbnail_image.attach(io: File.open(Rails.root.join('app/assets/images/thumbnail_image.jpg')),
+                                 filename: 'thumbnail_image.jpg')
+  product.main_image.attach(io: File.open(Rails.root.join('app/assets/images/main_image.jpg')),
+                            filename: 'main_image.jpg')
 end
