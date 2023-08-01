@@ -6,4 +6,14 @@ ja:
       previous: "前"
       next: "次"
       truncate: "..."
-
+  activerecord:
+    models:
+      product: "商品"
+    attributes:
+      product:
+        name: "表示名"
+        price: "値段"
+        description: "商品説明"
+        stock: "在庫"
+        main_image: "メイン画像"
+        thumbnail_image: "サムネイル画像"
