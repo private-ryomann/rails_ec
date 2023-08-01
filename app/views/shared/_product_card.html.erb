@@ -1,6 +1,6 @@
 <div class="col mb-5">
   <div class="card">
-    <%= link_to  product_path(locals[:product]), class: "product-card-link" do %>
+    <%= link_to  get_product_detail_path(locals[:product]), class: "product-card-link" do %>
       <!-- Product image-->
       <%= image_tag locals[:product].thumbnail_image.url, class: "product-card-img" %>
       <!-- Product details-->
@@ -14,7 +14,20 @@
       </div>
       <!-- Product actions-->
       <div class="card-footer p-4 pt-0 border-top-0 bg-transparent">
-        <div class="text-center"><a class="btn btn-outline-dark mt-auto" href="#">カートに追加</a></div>
+        <% if admin_page? %>
+          <div class=" container">
+            <div class="row">
+              <div class="col text-center">
+                <%= link_to "編集", edit_admin_product_path(locals[:product]) , class: "btn btn-outline-dark mt-auto" %>
+              </div>
+              <div class="col text-center">
+                <%= link_to "削除", admin_product_path(locals[:product]), data: { turbo_method: :delete, turbo_confirm: "商品#{locals[:product].name}を本当に削除しますか？" }, class: "btn btn-outline-dark mt-auto" %>
+              </div>
+            </div>
+          </div>
+        <% else %>
+          <div class="text-center"><a class="btn btn-outline-dark mt-auto" href="#">カートに追加</a></div>
+        <% end %>
       </div>
     <% end %>
   </div>
