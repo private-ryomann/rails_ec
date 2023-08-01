@@ -21,11 +21,11 @@ module ProductHelper
     end
   end
 
-  def hasError?(product, name)
+  def has_error?(product, name)
     product.errors.include?(name)
   end
 
   def setInvalid(product, name)
-    hasError?(product, name) ? 'invalid' : ''
+    has_error?(product, name) ? 'invalid' : ''
   end
 end

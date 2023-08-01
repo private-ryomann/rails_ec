@@ -34,7 +34,6 @@ module Admin
 
     def update
       @product = Product.find(params[:id])
-      debugger
       if @product.update(product_params)
         flash[:success] = "#{@product.name}を更新しました。"
         redirect_to admin_products_url
