@@ -25,7 +25,7 @@
           <%= form.text_field :description, class: "form-control #{setInvalid(locals[:product], "description")}" %>
           <% if hasError?(locals[:product], "description") %>
             <p class="red"><%= locals[:product].errors.full_messages_for(:description).first %></p>
-          <% end %>          
+          <% end %>
         </div>
       </div>
       <div class="row mb-3">
@@ -34,7 +34,7 @@
           <%= form.text_field :stock, class: "form-control num-filed #{setInvalid(locals[:product], "stock")}" %>
           <% if hasError?(locals[:product], "stock") %>
             <p class="red"><%= locals[:product].errors.full_messages_for(:stock).first %></p>
-          <% end %>          
+          <% end %>
         </div>
       </div>
       <div class="row mb-3">
@@ -43,7 +43,7 @@
           <%= form.file_field :main_image, class: "form-control" %>
           <% if hasError?(locals[:product], "main_image") %>
             <p class="red"><%= locals[:product].errors.full_messages_for(:main_image).first %></p>
-          <% end %>          
+          <% end %>
         </div>
       </div>
       <div class="row mb-3">
@@ -52,7 +52,7 @@
           <%= form.file_field :thumbnail_image, class: "form-control" %>
           <% if hasError?(locals[:product], "thumbnail_image") %>
             <p class="red"><%= locals[:product].errors.full_messages_for(:thumbnail_image).first %></p>
-          <% end %>          
+          <% end %>
         </div>
       </div>
       <div class="right">
