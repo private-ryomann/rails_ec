@@ -10,4 +10,6 @@ class Product < ApplicationRecord
   validates :price, presence: true, numericality: { only_integer: true, greater_than_or_equal_to: 0 }
   validates :description, presence: true, length: { maximum: 255 }
   validates :stock, presence: true, numericality: { only_integer: true, greater_than_or_equal_to: 0 }
+  validates :thumbnail_image, product_image: true
+  validates :main_image, product_image: true
 end
