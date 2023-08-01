@@ -1,0 +1,63 @@
+<div class="card product-form-card">
+  <div class="card-body">
+    <%= form_with model: locals[:product], url: get_product_form_path(locals[:product]), local: true do |form| %>
+      <div class="row mb-3">
+        <%= form.label :name, "商品名", class: "col-sm-2 col-form-label" %>
+        <div class="col-sm-10">
+          <%= form.text_field :name, class: "form-control #{setInvalid(locals[:product], "name")}" %>
+          <% if hasError?(locals[:product], "name") %>
+            <p class="red"><%= locals[:product].errors.full_messages_for(:name).first %></p>
+          <% end %>
+        </div>
+      </div>
+      <div class="row mb-3">
+        <%= form.label :price, "商品価格", class: "col-sm-2 col-form-label" %>
+        <div class="col-sm-10">
+          <%= form.text_field :price, class: "form-control num-filed #{setInvalid(locals[:product], "price")}" %>
+          <% if hasError?(locals[:product], "price") %>
+            <p class="red"><%= locals[:product].errors.full_messages_for(:price).first %></p>
+          <% end %>
+        </div>
+      </div>
+      <div class="row mb-3">
+        <%= form.label :description, "商品説明", class: "col-sm-2 col-form-label" %>
+        <div class="col-sm-10">
+          <%= form.text_field :description, class: "form-control #{setInvalid(locals[:product], "description")}" %>
+          <% if hasError?(locals[:product], "description") %>
+            <p class="red"><%= locals[:product].errors.full_messages_for(:description).first %></p>
+          <% end %>          
+        </div>
+      </div>
+      <div class="row mb-3">
+        <%= form.label :stock, "商品在庫", class: "col-sm-2 col-form-label" %>
+        <div class="col-sm-10">
+          <%= form.text_field :stock, class: "form-control num-filed #{setInvalid(locals[:product], "stock")}" %>
+          <% if hasError?(locals[:product], "stock") %>
+            <p class="red"><%= locals[:product].errors.full_messages_for(:stock).first %></p>
+          <% end %>          
+        </div>
+      </div>
+      <div class="row mb-3">
+        <%= form.label :main_image, "メイン画像", class: "col-sm-2 col-form-label #{setInvalid(locals[:product], "main_image")}" %>
+        <div class="col-sm-10">
+          <%= form.file_field :main_image, class: "form-control" %>
+          <% if hasError?(locals[:product], "main_image") %>
+            <p class="red"><%= locals[:product].errors.full_messages_for(:main_image).first %></p>
+          <% end %>          
+        </div>
+      </div>
+      <div class="row mb-3">
+        <%= form.label :thumbnail_image, "サムネ画像", class: "col-sm-2 col-form-label #{setInvalid(locals[:product], "thumbnail_image")}" %>
+        <div class="col-sm-10">
+          <%= form.file_field :thumbnail_image, class: "form-control" %>
+          <% if hasError?(locals[:product], "thumbnail_image") %>
+            <p class="red"><%= locals[:product].errors.full_messages_for(:thumbnail_image).first %></p>
+          <% end %>          
+        </div>
+      </div>
+      <div class="right">
+        <%= form.submit "登録", class: "btn btn-primary" %>
+      </div>
+    <% end %>
+  </div>
+</div>
