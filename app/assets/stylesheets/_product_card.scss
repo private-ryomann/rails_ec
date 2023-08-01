@@ -1,5 +1,6 @@
 .product-card-img {
   width: 100%;
+  height: 180px;
 }
 
 .product-card-link {
@@ -9,4 +10,8 @@
 
 .product-card-link:hover {
   color: #767778;
+}
+
+.invalid {
+  border-color: red;
 }
