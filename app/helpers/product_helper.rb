@@ -1,9 +1,12 @@
+# frozen_string_literal: true
+
 module ProductHelper
   def url_include?(path)
     request.url.include? path
   end
+
   def admin_page?
-    url_include?("/admin")
+    url_include?('/admin')
   end
 
   def get_product_detail_path(product)
@@ -11,9 +14,9 @@ module ProductHelper
   end
 
   def get_product_form_path(product)
-    if admin_page? && url_include?("new")
+    if admin_page? && url_include?('new')
       admin_product_path
-    elsif admin_page? && url_include?("edit")
+    elsif admin_page? && url_include?('edit')
       admin_product_path(product)
     end
   end
@@ -21,8 +24,8 @@ module ProductHelper
   def hasError?(product, name)
     product.errors.include?(name)
   end
-  
+
   def setInvalid(product, name)
-    hasError?(product, name) ? "invalid" : ""
+    hasError?(product, name) ? 'invalid' : ''
   end
 end
