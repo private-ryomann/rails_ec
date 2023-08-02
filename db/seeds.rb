@@ -10,7 +10,7 @@
 
 # Productsデータ作成
 20.times do |n|
-  product = Product.create!(
+  product = Product.new(
     name: "商品#{n}",
     price: 100 * n,
     description: "商品#{n}の詳細説明",
@@ -21,4 +21,5 @@
                                  filename: 'thumbnail_image.jpg')
   product.main_image.attach(io: File.open(Rails.root.join('app/assets/images/main_image.jpg')),
                             filename: 'main_image.jpg')
+  product.save!
 end
