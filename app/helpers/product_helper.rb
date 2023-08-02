@@ -15,7 +15,7 @@ module ProductHelper
 
   def get_product_form_path(product)
     if admin_page? && url_include?('new')
-      admin_product_path
+      admin_products_path
     elsif admin_page? && url_include?('edit')
       admin_product_path(product)
     end
