@@ -2,7 +2,7 @@
 
 module Admin
   class ProductsController < ApplicationController
-    http_basic_authenticate_with name: 'test', password: 'pass'
+    http_basic_authenticate_with name: 'admin', password: 'pw'
     before_action :product_params, only: [:create]
 
     def index
