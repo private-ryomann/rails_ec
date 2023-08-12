@@ -26,7 +26,9 @@
             </div>
           </div>
         <% else %>
-          <div class="text-center"><a class="btn btn-outline-dark mt-auto" href="#">カートに追加</a></div>
+          <div class="text-center">
+            <%= link_to "カートに追加", cart_path(locals[:product]), data: { turbo_method: :patch }, class: "btn btn-outline-dark mt-auto" %>
+          </div>
         <% end %>
       </div>
     <% end %>
